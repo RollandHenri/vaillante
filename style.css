@@ -1,0 +1,398 @@
+/* -- KeyFrames --*/
+@keyframes onLoad {
+  0% {
+    height: 100%;
+    opacity: 1;
+    z-index: 22;
+  }
+  100% {
+    height: 100%;
+    opacity: 0;
+    z-index: -1;
+  }
+}
+@keyframes navFade {
+  0% {
+    top: -100px;
+  }
+  100% {
+    top: 0;
+  }
+}
+@keyframes navLink {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  100% {
+    width: 100%;
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: sans-serif;
+  scroll-behavior: smooth;
+}
+
+body,
+html {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+header {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin: 0 auto;
+}
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 22;
+  animation: onLoad 1.5s ease-in forwards;
+}
+header .heroHeader {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  background: url("/public/img/pexels-markusspiske-1752757_resultat.webp") center/cover;
+}
+header .heroHeader .titleHero {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+header .heroHeader .titleHero h1 {
+  color: white;
+  font-size: 3.3rem;
+  color: blue;
+  letter-spacing: 2px;
+  margin-bottom: 80px;
+}
+header .heroHeader .titleHero img {
+  opacity: 0;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  filter: drop-shadow(5px 10px 20px rgb(238, 238, 238));
+  animation: fadeIn 2s ease forwards 2s;
+}
+
+nav {
+  position: fixed;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: blue;
+  z-index: 50;
+  transition: 0.8s ease;
+  animation: navFade 1s ease forwards 2s;
+}
+nav .link {
+  position: relative;
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-left: 30px;
+  margin: 0;
+}
+nav .link a {
+  position: relative;
+  height: 60px;
+  font-size: 1.4rem;
+  color: white;
+  margin-right: 20px;
+  transition: 0.8s ease;
+}
+nav .link a:after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 0px;
+  height: 2px;
+  opacity: 0;
+  background: green;
+}
+nav .link a:hover:after {
+  animation: navLink 0.8s ease forwards;
+}
+nav .sociaux {
+  width: 15%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin: 0;
+  padding-right: 30px;
+}
+nav .sociaux a img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-left: 10px;
+  transition: 0.8s ease;
+}
+
+/*-- Class Event --*/
+.navScroll {
+  position: fixed;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: blue;
+  z-index: 50;
+  animation: navFade 1s ease forwards 2s;
+}
+.navScroll .link {
+  position: relative;
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-left: 30px;
+  margin: 0;
+}
+.navScroll .link a {
+  position: relative;
+  height: 60px;
+  font-size: 1.1rem;
+  color: white;
+  margin-right: 20px;
+}
+.navScroll .link a:after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 0px;
+  height: 2px;
+  opacity: 0;
+  background: green;
+}
+.navScroll .link a:hover:after {
+  animation: navLink 0.8s ease forwards;
+}
+.navScroll .sociaux {
+  width: 15%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin: 0;
+  padding-right: 30px;
+}
+.navScroll .sociaux a img {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-left: 10px;
+}
+
+.apiResult {
+  width: 100%;
+  margin: 0 auto;
+  background-color: red;
+}
+.apiResult .apiResultTitle {
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.apiResult .apiResultTitle h2 {
+  position: relative;
+  text-align: center;
+  margin: 80px auto;
+}
+.apiResult .apiResultTitle h2:after {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  transform-origin: center;
+  width: 30px;
+  height: 2px;
+  background-color: black;
+}
+.apiResult .apiResultBtn {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+  height: 50px;
+  width: 50%;
+  margin-bottom: 40px;
+}
+.apiResult .apiResultBtn button {
+  width: 130px;
+  height: 38px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 8px;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, rgba(58, 65, 111, 0.5) 0 -3px 0 inset;
+  background-image: radial-gradient(100% 100% at 100% 0, #ffffff 0, #eeeff5 100%);
+  transition: box-shadow 0.15s, transform 0.15s;
+  white-space: nowrap;
+  will-change: box-shadow, transform;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.apiResult .apiResultBtn button:focus {
+  box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+}
+.apiResult .apiResultBtn button:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+  transform: translateY(-1px);
+}
+.apiResult .apiResultBtn button:active {
+  box-shadow: #3c4fe0 0 3px 7px inset;
+  transform: translateY(1px);
+}
+.apiResult .apiResultContainer {
+  position: relative;
+  width: 90%;
+  height: 850px;
+  margin: 0 auto;
+}
+.apiResult .apiResultContainer .apiMatch,
+.apiResult .apiResultContainer .apiClassement {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+}
+.apiResult .apiResultContainer .active {
+  opacity: 1;
+  z-index: 2;
+  transition: 0.8s ease;
+}
+
+.team {
+  width: 100%;
+  background-color: red;
+}
+.team h2 {
+  position: relative;
+  width: 146px;
+  text-align: center;
+  margin: 0 auto;
+  padding: 50px 0;
+}
+.team h2:after {
+  content: "";
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 2px;
+  background-color: black;
+}
+.team .teamContainer {
+  width: 100%;
+  height: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+.team .teamContainer .teamContainerListe {
+  height: 600px;
+  width: 200px;
+  min-width: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-top-left-radius: 40px;
+  border-bottom-left-radius: 40px;
+  background-color: aqua;
+}
+.team .teamContainer .teamContainerListe h2 {
+  text-align: center;
+  margin: 50px auto;
+}
+.team .teamContainer .teamContainerListe ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+  height: 90%;
+}
+.team .teamContainer .teamContainerListe ul h3 {
+  text-decoration: underline;
+  margin-bottom: 10px;
+}
+.team .teamContainer .teamContainerListe ul li {
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.team .teamContainer .teamContainerListe ul li:hover {
+  scale: 1.1;
+}
+.team .teamContainer .teamContainerCarousel {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 700px;
+  width: 80%;
+  border-radius: 40px;
+  background-color: violet;
+}
+.team .teamContainer .teamContainerCarousel img {
+  display: flex;
+  position: absolute;
+  width: 80%;
+  max-width: 960px;
+  max-height: 630px;
+  opacity: 0;
+  animation: fadeIn 1.5s ease forwards;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,91 @@
+.apiResult {
+  width: 100%;
+  margin: 0 auto;
+  background-color: red;
+  & .apiResultTitle {
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & h2 {
+      position: relative;
+      text-align: center;
+      margin: 80px auto;
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        transform-origin: center;
+        width: 30px;
+        height: 2px;
+        background-color: black;
+      }
+    }
+  }
+  & .apiResultBtn {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    height: 50px;
+    width: 50%;
+    margin-bottom: 40px;
+    & button {
+      width: 130px;
+      height: 38px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      border: none;
+      border-radius: 8px;
+      box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+        rgba(45, 35, 66, 0.3) 0 7px 13px -3px,
+        rgba(58, 65, 111, 0.5) 0 -3px 0 inset;
+      background-image: radial-gradient(
+        100% 100% at 100% 0,
+        #ffffff 0,
+        #eeeff5 100%
+      );
+      transition: box-shadow 0.15s, transform 0.15s;
+      white-space: nowrap;
+      will-change: box-shadow, transform;
+      font-size: 0.9rem;
+      cursor: pointer;
+      &:focus {
+        box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
+          rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+      }
+      &:hover {
+        box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+          rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+        transform: translateY(-1px);
+      }
+      &:active {
+        box-shadow: #3c4fe0 0 3px 7px inset;
+        transform: translateY(1px);
+      }
+    }
+  }
+
+  & .apiResultContainer {
+    position: relative;
+    width: 90%;
+    height: 850px;
+    margin: 0 auto;
+    & .apiMatch,
+    .apiClassement {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      opacity: 0;
+    }
+    & .active {
+      opacity: 1;
+      z-index: 2;
+      transition: 0.8s ease;
+    }
+  }
+}
