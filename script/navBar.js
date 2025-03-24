@@ -15,17 +15,3 @@ window.addEventListener("scroll", () => {
     navBar.classList.add("nav");
   }
 });
-
-navBar.addEventListener("mouseover", () => {
-  if (navBar.classList.contains("navScroll")) {
-    navBar.classList.remove("navScroll");
-    navBar.classList.add("nav");
-  }
-});
-
-navBar.addEventListener("mouseleave", () => {
-  if (navBar.classList.contains("nav") && window.scrollY > 302) {
-    navBar.classList.remove("nav");
-    navBar.classList.add("navScroll");
-  }
-});
